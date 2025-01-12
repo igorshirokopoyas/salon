@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Selection results{% endblock %}
+
+{% block extra_head %}
+<style>
+    table, tr, th {
+        border: 1px solid
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Телефон</th>
+                <th>Дата визита</th>
+            </tr>
+        {% for client in clients %}
+
+            <tr>
+                <th>{{ client.id }}</th>
+                <th>{{ client.name }}</th>
+                <th>{{ client.telephone }}</th>
+                <th>{{ client.last_visit_date }}</th>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+{% endblock %}
